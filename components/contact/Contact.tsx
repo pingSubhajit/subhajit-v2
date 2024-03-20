@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { useRef } from 'react'
 import { useScroll, motion, useTransform } from 'framer-motion'
 import Magnetic from '@/components/utilities/Magnetic'
-import Button from "@/components/Button";
+import Button from '@/components/Button'
 
 export default function Contact() {
 	const container = useRef(null)
