@@ -12,6 +12,22 @@ import SlidingImages from '@/components/SlidingImages'
 import Contact from '@/components/contact/Contact'
 import PreloaderProvider from '@/components/providers/PreloaderProvider'
 import UnderlinedLink from '@/components/UnderlinedLink'
+import {Metadata} from 'next'
+
+export const metadata: Metadata = {
+	title: 'Subhajit Kundu | Full-stack Engineer',
+	description: 'Experienced Full-stack Dev from Kolkata 🚀| Skilled in MERN stack & Next.js | UX design background | ' +
+		'BCOM - MCA | Passionate about crafting delightful user experiences 😊| Remote work advocate 🌐 | ' +
+		'Problem-solver 💡 | Let\'s build something amazing together!',
+
+	openGraph: {
+		title: 'Subhajit Kundu | Full-stack Engineer',
+		description: 'Experienced Full-stack Dev from Kolkata 🚀| Skilled in MERN stack & Next.js | UX design background | ' +
+			'BCOM - MCA | Passionate about crafting delightful user experiences 😊| Remote work advocate 🌐 | ' +
+			'Problem-solver 💡 | Let\'s build something amazing together!',
+		images: '/og.jpg'
+	}
+}
 
 export default function Home() {
 	return (
