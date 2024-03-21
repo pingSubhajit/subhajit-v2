@@ -16,7 +16,7 @@ export default function Description() {
 	return (
 		<div ref={description} className="px-14 lg:px-28 xl:px-36 2xl:px-48 flex justify-center relative">
 			<div className="max-w-[1400px] flex flex-col lg:flex-row gap-8 2xl:gap-12 text-black">
-				<p className="text-2xl lg:text-xl xl:text-3xl 2xl:text-4xl gap-2 leading-[1.3]">
+				<p className="text-2xl lg:text-xl xl:text-3xl 2xl:text-4xl lg:space-y-2 leading-[1.3]">
 					{phrase.split(' ').map((word, index) => {
 						return <span key={index} className="mr-2 relative overflow-hidden inline-flex">
 							<motion.span custom={index} variants={slideUp} animate={isInView ? 'open' : 'closed'}
