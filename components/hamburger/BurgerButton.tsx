@@ -37,7 +37,7 @@ export default function BurgerButton() {
 				<Magnetic>
 					<div onClick={() => {
 						setIsActive(!isActive)
-					}} className="relative m-5 z-[100] w-20 h-20 rounded-full
+					}} className="relative m-5 z-[100] w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full
 						bg-basil cursor-pointer flex items-center justify-center">
 						<div className={`${styles.burger} ${isActive ? styles.burgerActive : ''}`}></div>
 					</div>

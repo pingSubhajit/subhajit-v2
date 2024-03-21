@@ -22,7 +22,7 @@ export default function Home() {
 			<section className="h-screen w-screen relative bg-black">
 				<BgGrid />
 				<div
-					className="absolute z-10 left-0 bottom-0 right-0 pointer-events-none overflow-hidden w-full flex justify-center">
+					className="absolute z-10 left-0 bottom-14 md:bottom-0 lg:bottom-0 right-0 pointer-events-none overflow-hidden w-full flex justify-center">
 					<Image src={heroImage} alt='Subhajit image' className="min-w-[1440px]" priority/>
 				</div>
 				
@@ -30,7 +30,7 @@ export default function Home() {
 					<Locator className="absolute z-10 top-[55%] right-0 translate-y-[-50%]" />
 				</div>
 
-				<div className="absolute bottom-0 pl-[10vw] lg:pl-40 z-10 w-screen lg:w-auto">
+				<div className="absolute bottom-14 md:bottom-0 lg:bottom-0 pl-[10vw] lg:pl-40 z-10 w-screen lg:w-auto">
 					<Parallax speed={-0.5} className="relative z-50">
 						<Arrow className="hidden md:block"/>
 
@@ -47,7 +47,7 @@ export default function Home() {
 
 				<MarqueeHeader />
 
-				<Parallax speed={-1} className="relative z-30 pointer-events-none">
+				<Parallax speed={-1} className="relative z-30 pointer-events-none -mt-16 md:mt-0">
 					<div className="bg-white h-screen" />
 				</Parallax>
 			</section>
