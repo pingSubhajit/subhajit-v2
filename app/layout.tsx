@@ -18,7 +18,7 @@ export default function RootLayout({
 		<html lang="en" className="overflow-x-hidden">
 			<SmoothScrollProvider>
 				<body className={rubik.className}>
-					<main className="bg-black overflow-x-hidden">
+					<main className="bg-white overflow-x-hidden">
 						{children}
 					</main>
 				</body>

@@ -1,5 +1,3 @@
-'use client'
-
 import heroImage from '@/public/hero.png'
 import Image from 'next/image'
 import MarqueeHeader from '@/components/MarqueeHeader'
@@ -18,41 +16,43 @@ import UnderlinedLink from '@/components/UnderlinedLink'
 export default function Home() {
 	return (
 		<div>
-			<PreloaderProvider />
+			{/*<PreloaderProvider />*/}
 			
 			<Header />
-			<section className="h-screen w-screen relative">
+			<section className="h-screen w-screen relative bg-black">
 				<BgGrid />
 				<div
 					className="absolute z-10 left-0 bottom-0 right-0 pointer-events-none overflow-hidden w-full flex justify-center">
-					<Image src={heroImage} alt='Subhajit image' className="min-w-[1920px]" priority/>
+					<Image src={heroImage} alt='Subhajit image' className="min-w-[1440px]" priority/>
 				</div>
 				
 				<div>
-					<Locator className="absolute top-[55%] right-0 translate-y-[-50%]" />
+					<Locator className="absolute z-10 top-[55%] right-0 translate-y-[-50%]" />
 				</div>
 
-				<div className="absolute bottom-0 pl-40 z-10">
+				<div className="absolute bottom-0 pl-[10vw] lg:pl-40 z-10 w-screen lg:w-auto">
 					<Parallax speed={-0.5} className="relative z-50">
-						<Arrow />
+						<Arrow className="hidden md:block"/>
 
-						<div className="mt-24 text-white text-6xl space-y-4">
+						<div className="mt-24 text-petroleum font-medium lg:text-white lg:font-normal text-5xl lg:text-6xl lg:space-y-4">
 							<h2>Full-stack</h2>
 							<h2>Engineer</h2>
 						</div>
 
-						<UnderlinedLink text="download resume" />
+						<UnderlinedLink text="download resume" className="text-petroleum lg:text-white" />
 					</Parallax>
+
+					<div className="bg-gradient-to-b from-transparent to-white absolute inset-0 w-full h-full lg:hidden"/>
 				</div>
 
-				<MarqueeHeader/>
+				<MarqueeHeader />
 
 				<Parallax speed={-1} className="relative z-30 pointer-events-none">
 					<div className="bg-white h-screen" />
 				</Parallax>
 			</section>
 
-			<section className="bg-white pt-[200px] relative z-40 mb-32">
+			<section className="bg-white pt-12 2xl:pt-48 relative z-40 mb-32">
 				<Description />
 			</section>
 

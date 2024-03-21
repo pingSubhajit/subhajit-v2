@@ -8,9 +8,11 @@ import Magnetic from '@/components/utilities/Magnetic'
 import {useOnClickOutside} from 'usehooks-ts'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
+import useResponsive from '@/hooks/useResponsive'
 
 export default function BurgerButton() {
 	const [isActive, setIsActive] = useState(false)
+	const {isMobile} = useResponsive()
 
 	const menu = useRef(null)
 	const button = useRef(null)
@@ -24,14 +26,14 @@ export default function BurgerButton() {
 				start: 0,
 				end: window.innerHeight / 4,
 				onLeave: () => {gsap.to(button.current, {scale: 1, duration: 0.25, ease: 'power1.out'})},
-				onEnterBack: () => {gsap.to(button.current, {scale: 0, duration: 0.25, ease: 'power1.out'})}
+				onEnterBack: () => {gsap.to(button.current, {scale: window.innerWidth <= 640 ? 1 : 0, duration: 0.25, ease: 'power1.out'})}
 			}
 		})
 	}, [])
 
 	return (
 		<div ref={menu}>
-			<div className="fixed z-[100] right-0 scale-0 top-0" ref={button}>
+			<div className={`fixed z-[100] right-0 scale-${!isMobile ? 0 : 1} top-0`} ref={button}>
 				<Magnetic>
 					<div onClick={() => {
 						setIsActive(!isActive)

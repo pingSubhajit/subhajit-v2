@@ -57,25 +57,23 @@ export default function SlidingImages() {
 
 	return (
 		<div ref={container} className="flex flex-col gap-[3vw] relative pt-52 bg-white z-30">
-			<motion.div style={{x: x1}} className="flex relative gap-[3vw] w-[120vw] left[-10vw]">
-				{
-					slider1.map( (project, index) => {
-						return <div key={index} className="w-[25%] h-[20vw] flex items-center justify-center" style={{backgroundColor: project.color}} >
-							<div key={index} className="relative w-[80%] h-[80%]">
-								<Image className="object-cover"
-									fill={true}
-									alt={'image'}
-									src={`/images/${project.src}`}/>
-							</div>
+			<motion.div style={{x: x1}} className="flex relative gap-[3vw] w-[500vw] lg:w-[120vw] lg:left[-10vw]">
+				{slider1.map( (project, index) => {
+					return <div key={index} className="w-[25%] h-[80vw] lg:h-[20vw] flex items-center justify-center" style={{backgroundColor: project.color}} >
+						<div key={index} className="relative w-[80%] h-[80%]">
+							<Image className="object-cover"
+								fill={true}
+								alt={'image'}
+								src={`/images/${project.src}`}/>
 						</div>
-					})
-				}
+					</div>
+				})}
 			</motion.div>
 
-			<motion.div style={{x: x2}} className="flex relative gap-[3vw] w-[120vw] left[-10vw]">
+			<motion.div style={{x: x2}} className="flex relative gap-[3vw] w-[500vw] lg:w-[120vw] left[-10vw]">
 				{
 					slider2.map( (project, index) => {
-						return <div key={index} className="w-[25%] h-[20vw] flex items-center justify-center" style={{backgroundColor: project.color}} >
+						return <div key={index} className="w-[25%] h-[80vw] lg:h-[20vw] flex items-center justify-center" style={{backgroundColor: project.color}} >
 							<div key={index} className="relative w-[80%] h-[80%]">
 								<Image className="object-cover"
 									fill={true}
@@ -89,7 +87,7 @@ export default function SlidingImages() {
 
 			</motion.div>
 
-			<motion.div style={{height}} className="relative mt-96">
+			<motion.div style={{height}} className="relative mt-24 lg:mt-96">
 				<div className="h-[1550%] w-[120%] left-[-10%] rounded-b-[50%] bg-white z-50 absolute shadow-[0px_60px_50px_rgba(0,0,0,0.748)]"></div>
 			</motion.div>
 

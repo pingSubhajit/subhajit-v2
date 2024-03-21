@@ -1,10 +1,15 @@
 .globe {
-  width: 3em;
-  height: 3em;
+  width: 2em;
+  height: 2em;
   border-radius: 50%;
   overflow: hidden;
   will-change: transform;
   border: 1px solid #595344;
+
+  @media (min-width: 1024px) {
+    width: 3em;
+    height: 3em;
+  }
 }
 
 @keyframes globe {

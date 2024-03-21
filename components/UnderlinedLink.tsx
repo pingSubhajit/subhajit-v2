@@ -4,8 +4,9 @@ import Magnetic from '@/components/utilities/Magnetic'
 import constants from '@/constants'
 import {useEffect, useRef} from 'react'
 import gsap from 'gsap'
+import {cn} from '@/lib/utils'
 
-const UnderlinedLink = ({text}: {text: string}) => {
+const UnderlinedLink = ({text, className}: {text: string, className?: string}) => {
 	const link = useRef(null)
 	const accent = useRef(null)
 
@@ -24,8 +25,8 @@ const UnderlinedLink = ({text}: {text: string}) => {
 	return (
 		<div ref={link}>
 			<Magnetic>
-				<a target="_blank" href={constants.resumeLink} className="block">
-					<div className="w-[max-content] pt-6 pb-10 text-white">
+				<a target="_blank" href={constants.resumeLink} className={cn('block text-white', className)}>
+					<div className="w-[max-content] pt-6 pb-10">
 						{text}
 						<div ref={accent} className="w-full h-[1px] scale-x-0 rounded-full bg-white origin-center"/>
 					</div>

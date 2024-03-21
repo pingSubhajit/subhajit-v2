@@ -3,12 +3,13 @@
 import Logo from '@/components/Logo'
 import BurgerButton from '@/components/hamburger/BurgerButton'
 import Magnetic from '@/components/utilities/Magnetic'
-import {useEffect, useLayoutEffect, useRef, useState} from 'react'
+import {useEffect, useRef, useState} from 'react'
 import {usePathname} from 'next/navigation'
-import gsap from 'gsap'
-import ScrollTrigger from 'gsap/ScrollTrigger'
+import useResponsive from '@/hooks/useResponsive'
 
 const Header = () => {
+	const {isMobile} = useResponsive()
+
 	const header = useRef(null)
 	const [isActive, setIsActive] = useState(false)
 	const pathname = usePathname()
@@ -22,7 +23,7 @@ const Header = () => {
 			<Logo/>
 
 			<div>
-				<div className="flex items-center">
+				{!isMobile && <div className="flex items-center">
 					<Magnetic>
 						<div className="flex flex-col relative z-10 p-4 cursor-pointer group text-white">
 							<a>Works</a>
@@ -46,7 +47,7 @@ const Header = () => {
 					group-hover:scale-100 transition-[transform_0.2s_cubic-bezier(0.76,0,0.24,1)]"></div>
 						</div>
 					</Magnetic>
-				</div>
+				</div>}
 
 				<div>
 					<BurgerButton />

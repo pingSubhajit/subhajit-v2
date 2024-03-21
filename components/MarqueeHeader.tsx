@@ -47,16 +47,16 @@ const MarqueeHeader = () => {
 		<div className="relative flex overflow-hidden h-screen">
 			<h1 className="sr-only">Subhajit Kundu</h1>
 			<div className="absolute top-36">
-				<div ref={slider} className="relative whitespace-nowrap flex items-center">
-					<p ref={firstText} className="text-ghidorah text-[190px] flex items-center" aria-hidden>
+				<div ref={slider} className="relative whitespace-nowrap flex items-center text-ghidorah text-8xl lg:text-9xl xl:text-[190px]">
+					<p ref={firstText} className="flex items-center" aria-hidden>
 						Subhajit Kundu
 						<span className="w-40 h-2 bg-ghidorah rounded-3xl mt-2 ml-12 mr-12" />
 					</p>
-					<p ref={secondText} className="text-ghidorah text-[190px] flex items-center" aria-hidden>
+					<p ref={secondText} className="flex items-center" aria-hidden>
 						Subhajit Kundu
 						<span className="w-40 h-2 bg-ghidorah rounded-3xl mt-2 ml-12 mr-12" />
 					</p>
-					<p ref={thirdText} className="text-ghidorah text-[190px] flex items-center" aria-hidden>
+					<p ref={thirdText} className="flex items-center" aria-hidden>
 						Subhajit Kundu
 						<span className="w-40 h-2 bg-ghidorah rounded-3xl mt-2 ml-12 mr-12" />
 					</p>

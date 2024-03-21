@@ -1,6 +1,8 @@
-const Arrow = () => {
+import {cn} from '@/lib/utils'
+
+const Arrow = ({className}: {className?: string}) => {
 	return (
-		<svg width="28" height="32" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<svg width="28" height="32" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg" className={cn(className)}>
 			<line x1="25.5" y1="29.7446" x2="1.5" y2="29.7446" stroke="#FCE5AC" strokeWidth="3"
 				  strokeLinecap="round"/>
 			<line x1="26.5" y1="30.1678" x2="26.5" y2="3.50002" stroke="#FCE5AC" strokeWidth="3"
