@@ -16,7 +16,7 @@ import UnderlinedLink from '@/components/UnderlinedLink'
 export default function Home() {
 	return (
 		<div>
-			{/*<PreloaderProvider />*/}
+			<PreloaderProvider />
 			
 			<Header />
 			<section className="h-screen w-screen relative bg-black">
