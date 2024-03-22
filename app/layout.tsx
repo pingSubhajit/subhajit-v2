@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Rubik } from 'next/font/google'
 import './globals.css'
 import SmoothScrollProvider from '@/components/providers/SmoothScrollProvider'
+import {clsx} from 'clsx'
 
 const rubik = Rubik({ subsets: ['latin'] })
 
@@ -17,8 +18,8 @@ export default function RootLayout({
 	return (
 		<html lang="en" className="overflow-x-hidden">
 			<SmoothScrollProvider>
-				<body className={rubik.className}>
-					<main className="bg-white overflow-x-hidden">
+				<body className={clsx(rubik.className, 'bg-white')}>
+					<main className="overflow-x-hidden">
 						{children}
 					</main>
 				</body>
