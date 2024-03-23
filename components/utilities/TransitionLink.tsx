@@ -6,12 +6,7 @@ import {AnimatePresence} from 'framer-motion'
 import Transitioner from '@/components/Transitioner'
 import {createPortal} from 'react-dom'
 
-interface Props {
-	href: string
-	label: string
-}
-
-const TransitionLink = ({children, href}: {children: ReactNode, href: string}) => {
+const TransitionLink = ({children, href, className}: {children: ReactNode, href: string, className?: string}) => {
 	const router = useRouter()
 	const pathname = usePathname()
 
@@ -31,7 +26,6 @@ const TransitionLink = ({children, href}: {children: ReactNode, href: string}) =
 	useEffect(() => {
 		// @ts-ignore
 		ref.current = document.getElementsByTagName('body')[0]
-		console.log(ref.current)
 	}, [])
 
 	return (
@@ -43,7 +37,7 @@ const TransitionLink = ({children, href}: {children: ReactNode, href: string}) =
 				ref.current
 			)}
 
-			<a href={href} onClick={handleClick}>{children}</a>
+			<a href={href} onClick={handleClick} className={className}>{children}</a>
 		</>
 	)
 }
