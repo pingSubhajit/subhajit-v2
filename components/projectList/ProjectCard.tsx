@@ -1,16 +1,27 @@
 'use client'
 
 import React from 'react'
-import Image from 'next/image'
+import Image, {StaticImageData} from 'next/image'
 import useResponsive from '@/hooks/useResponsive'
 import TransitionLink from '@/components/utilities/TransitionLink'
 
-const ProjectCard = (
-	{index, title, slug, type, src, color, setModal}:
-	{index: number, title: string, slug: string, type: string, src: string, color: string, setModal: (
-		modal: {active: boolean, index: number}) => void
-	}
-) => {
+const ProjectCard = ({
+	index,
+	title,
+	slug,
+	type,
+	src,
+	color,
+	setModal
+}: {
+	index: number,
+	title: string,
+	slug: string,
+	type: string,
+	src: StaticImageData,
+	color: string,
+	setModal: (modal: {active: boolean, index: number}) => void
+}) => {
 	const {isTablet, isMobile} = useResponsive()
 	
 	return (
@@ -33,7 +44,7 @@ const ProjectCard = (
 					<div className="h-full w-full">
 						<div className="h-full w-full flex items-center justify-center" style={{backgroundColor: color}}>
 							<Image
-								src={`/images/${src}`}
+								src={src}
 								width={300}
 								height={0}
 								alt="image"

@@ -1,8 +1,8 @@
-import {useRef, useEffect, MutableRefObject} from 'react'
-import { motion } from 'framer-motion'
+import {MutableRefObject, useEffect, useRef} from 'react'
+import {motion} from 'framer-motion'
 import Image from 'next/image'
-import {Project} from '@/components/projectList/ProjectList'
 import gsap from 'gsap'
+import {Project} from '@/components/projectList/projects'
 
 const scaleAnimation = {
 	initial: {scale: 0, x:'-50%', y:'-50%'},
@@ -53,11 +53,11 @@ export default function ProjectModal({modal, projects, list}: {modal: {active: b
 							const { src, color } = project
 							return <div className="h-full w-full flex items-center justify-center" style={{backgroundColor: color}} key={`modal_${index}`}>
 								<Image
-									src={`/images/${src}`}
+									src={src}
 									width={300}
 									height={0}
 									alt="image"
-									className="h-auto"
+									className="h-auto w-full"
 								/>
 							</div>
 						})

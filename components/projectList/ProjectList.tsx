@@ -4,45 +4,7 @@ import {useRef, useState} from 'react'
 import ProjectCard from '@/components/projectList/ProjectCard'
 import Modal from '@/components/projectList/ProjectModal'
 import useResponsive from '@/hooks/useResponsive'
-
-export type Project = {
-	title: string,
-	slug: string,
-	type: string,
-	src: string,
-	color: string
-}
-
-const projects: Project[] = [
-	{
-		title: 'POKENAME',
-		slug: 'pokename',
-		type: 'Design & Development',
-		src: 'pokename.png',
-		color: '#000000'
-	},
-	{
-		title: 'MOBILEHUB',
-		slug: 'mobilehub',
-		type: 'Design & Frontend Development',
-		src: 'wbbmc.png',
-		color: '#8C8C8C'
-	},
-	{
-		title: 'SCRAPY',
-		slug: 'scrapy',
-		type: 'Design & Development',
-		src: 'scrapy.png',
-		color: '#EFE8D3'
-	},
-	{
-		title: 'KAYSHEN',
-		slug: 'kayshen',
-		type: 'Design & Development',
-		src: 'wbtsk.png',
-		color: '#706D63'
-	}
-]
+import projects from '@/components/projectList/projects'
 
 const ProjectList = () => {
 	const [modal, setModal] = useState({active: false, index: 0})

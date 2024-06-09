@@ -1,6 +1,6 @@
-import React from 'react'
-import { useEffect, useRef } from 'react'
-import styles from './style.module.scss'
+'use client'
+
+import React, {useEffect, useRef} from 'react'
 import gsap from 'gsap'
 import Magnetic from '@/components/utilities/Magnetic'
 import {cn} from '@/lib/utils'
