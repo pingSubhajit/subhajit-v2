@@ -16,15 +16,15 @@ export const metadata: Metadata = {
 
 const PartialPreRenderingArticles = () => {
 	return (
-		<div className="min-h-screen">
+		<div className="min-h-screen pb-24">
 			<Header textClassName="text-black" decoratorClassName="bg-black" logoClassName="text-black"/>
 
 			<div className="mt-40 grid grid-cols-12 gap-5">
-				<article className="col-span-4 col-start-5 text-petroleum">
-					<h1 className="text-xl font-medium">How partial pre-rendering can improve performance</h1>
-					<time dateTime="2024-06-09" title="June 9th, 2024" className="text-sm text-basil">June 9th, 2024</time>
+				<article className="col-span-6 col-start-4 text-petroleum">
+					<h1 className="text-4xl font-medium mb-4">How partial pre-rendering can improve performance</h1>
+					<time dateTime="2024-06-09" title="June 9th, 2024" className="text-base text-basil">June 9th, 2024</time>
 
-					<div className="mt-12 prose-sm leading-relaxed prose-neutral">
+					<div className="mt-16 prose-xl leading-relaxed prose-neutral">
 						<h3 className="font-semibold">What is it?</h3>
 						<p>Well, simply put, there are two types of web pages: static and dynamic.</p>
 						<p>
