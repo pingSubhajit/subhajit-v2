@@ -10,10 +10,17 @@ export async function POST(req: NextRequest, res: NextResponse) {
 			})
 		}
 
-		return NextResponse.json({
+		return new Response(JSON.stringify({
 			status: 'success',
 			email: body.email,
 			message: `${body.email} has been added to the project`
+		}), {
+			status: 200,
+			headers: {
+				'Access-Control-Allow-Origin': '*',
+				'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+				'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+			}
 		})
 	} catch (error: any) {
 		return NextResponse.json({
