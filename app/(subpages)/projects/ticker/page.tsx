@@ -52,8 +52,8 @@ const TickerProjectPage = () => {
 				<Parallax speed={0.5} className="z-10">
 					<a href="https://tickernow.xyz" target="_blank">
 						<Button className="w-28 lg:w-44 aspect-square bg-black text-beige rounded-full flex items-center
-						justify-center cursor-pointer whitespace-nowrap absolute right-36 top-28 [&>p]:flex
-						[&>p]:justify-center [&>p]:items-center [&>p]:gap-1 text-sm lg:text-base">
+						justify-center cursor-pointer whitespace-nowrap absolute right-36 top-28 [&>span]:flex
+						[&>span]:justify-center [&>span]:items-center [&>span]:gap-1 text-sm lg:text-base">
 							<span>Live app</span>
 							<MoveUpRight className="w-4 h-4" />
 						</Button>
