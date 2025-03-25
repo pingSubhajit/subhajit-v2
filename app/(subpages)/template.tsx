@@ -1,15 +1,16 @@
 'use client'
 
 import PreloaderProvider from '@/components/providers/PreloaderProvider'
-import {useSelectedLayoutSegments} from 'next/navigation'
+import {usePathname} from 'next/navigation'
 import {capitalizeFirstLetter} from '@/lib/utils'
 
 export default function Template({ children }: { children: React.ReactNode }) {
-	const segments = useSelectedLayoutSegments()!
+	const pathname = usePathname()
+	const segment = pathname.split('/').filter(Boolean).pop() || ''
 	
 	return (
 		<div>
-			<PreloaderProvider label={capitalizeFirstLetter(segments[segments.length - 1])} />
+			<PreloaderProvider label={capitalizeFirstLetter(segment)} />
 
 			{children}
 		</div>

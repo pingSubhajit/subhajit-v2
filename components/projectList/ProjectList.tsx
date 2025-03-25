@@ -27,7 +27,7 @@ const ProjectList = () => {
 					/>
 				})}
 			</div>
-			{!isTablet && !isMobile && <Modal modal={modal} projects={projects} list={list}/>}
+			{!isTablet && !isMobile && <Modal modal={modal} projects={projects} />}
 		</div>
 	)
 }
