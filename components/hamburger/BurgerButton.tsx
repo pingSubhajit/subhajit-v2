@@ -2,7 +2,7 @@
 
 import styles from '@/components/hamburger/BurgerButton.module.scss'
 import {useLayoutEffect, useRef, useState} from 'react'
-import {AnimatePresence} from 'framer-motion'
+import {AnimatePresence} from 'motion/react'
 import Nav from '@/components/hamburger/Nav'
 import Magnetic from '@/components/utilities/Magnetic'
 import {useOnClickOutside} from 'usehooks-ts'

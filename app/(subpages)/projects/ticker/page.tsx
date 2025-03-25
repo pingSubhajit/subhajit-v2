@@ -54,7 +54,7 @@ const TickerProjectPage = () => {
 						<Button className="w-28 lg:w-44 aspect-square bg-black text-beige rounded-full flex items-center
 						justify-center cursor-pointer whitespace-nowrap absolute right-36 top-28 [&>p]:flex
 						[&>p]:justify-center [&>p]:items-center [&>p]:gap-1 text-sm lg:text-base">
-							<p>Live app</p>
+							<span>Live app</span>
 							<MoveUpRight className="w-4 h-4" />
 						</Button>
 					</a>

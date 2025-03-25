@@ -3,7 +3,7 @@
 import styles from '@/components/contact/Contact.module.scss'
 import Image from 'next/image'
 import {useEffect, useRef, useState} from 'react'
-import { useScroll, motion, useTransform } from 'framer-motion'
+import {motion, useScroll, useTransform} from 'motion/react'
 import Magnetic from '@/components/utilities/Magnetic'
 import Button from '@/components/Button'
 
@@ -15,19 +15,22 @@ export default function Contact() {
 	})
 	const x = useTransform(scrollYProgress, [0, 1], [0, 100])
 	const y = useTransform(scrollYProgress, [0, 1], [-500, 0])
-	const rotate = useTransform(scrollYProgress, [0, 1], [120, 90])
 
 	const getCurrentTime = () => {
 		let currentTime = new Date()
 		let currentOffset = currentTime.getTimezoneOffset()
 		let ISTOffset = 330
-		let ISTTime = new Date(currentTime.getTime() + (ISTOffset + currentOffset)*60000);let time = new Date(Date.now())
+		let ISTTime = new Date(currentTime.getTime() + (ISTOffset + currentOffset)*60000)
 		return ISTTime.toLocaleTimeString('en-US')
 	}
 
-	const [time, setTime] = useState(getCurrentTime())
+	const [time, setTime] = useState('')
+	const [isMounted, setIsMounted] = useState(false)
 
 	useEffect(() => {
+		setIsMounted(true)
+		setTime(getCurrentTime())
+		
 		const interval = setInterval(() => {
 			setTime(getCurrentTime())
 		}, 1000)
@@ -67,7 +70,7 @@ export default function Contact() {
 						</span>
 						<span>
 							<h3>LOCAL TIME</h3>
-							<p>{time} GMT+5.30</p>
+							<p>{isMounted ? `${time} GMT+5.30` : ''}</p>
 						</span>
 					</div>
 					<div>

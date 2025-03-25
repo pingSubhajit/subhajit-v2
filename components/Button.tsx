@@ -40,7 +40,7 @@ export default function Button({children, className, backgroundColor, ...attribu
 				onMouseEnter={() => {manageMouseEnter()}} onMouseLeave={() => {manageMouseLeave()}}
 				{...attributes}
 			>
-				<p className="relative z-10 transition-[color_0.4_linear] group-hover:text-white">{children}</p>
+				<span className="relative z-10 transition-[color_0.4_linear] group-hover:text-white">{children}</span>
 				<div ref={circle} className="w-full h-[150%] absolute rounded-full
 				top-full bg-basil border-[1px] border-solid border-basil" style={{backgroundColor}}></div>
 			</div>

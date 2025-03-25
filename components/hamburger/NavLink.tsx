@@ -1,8 +1,7 @@
-import { motion } from 'framer-motion'
-import {slide, scale, NavItem} from '@/components/hamburger/Nav'
+import {motion} from 'motion/react'
+import {NavItem, scale, slide} from '@/components/hamburger/Nav'
 import Magnetic from '@/components/utilities/Magnetic'
 import TransitionLink from '@/components/utilities/TransitionLink'
-import Transitioner from '@/components/Transitioner'
 
 export default function NavLink({data, isActive, setSelectedIndicator}: {data: NavItem & {index: number}, isActive: boolean, setSelectedIndicator: (href: string) => void}) {
 	const { title, href, index} = data

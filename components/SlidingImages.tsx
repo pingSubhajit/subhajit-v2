@@ -1,7 +1,7 @@
 'use client'
 
-import { useRef } from 'react'
-import { useScroll, useTransform, motion } from 'framer-motion'
+import {useRef} from 'react'
+import {motion, useScroll, useTransform} from 'motion/react'
 import Image from 'next/image'
 
 const slider1 = [

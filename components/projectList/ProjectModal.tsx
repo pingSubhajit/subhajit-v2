@@ -1,5 +1,5 @@
-import {MutableRefObject, useEffect, useRef} from 'react'
-import {motion} from 'framer-motion'
+import {useEffect, useRef} from 'react'
+import {motion} from 'motion/react'
 import Image from 'next/image'
 import gsap from 'gsap'
 import {Project} from '@/components/projectList/projects'
@@ -10,7 +10,7 @@ const scaleAnimation = {
 	closed: {scale: 0, x:'-50%', y:'-50%', transition: {duration: 0.4, ease: [0.32, 0, 0.67, 0]}}
 }
 
-export default function ProjectModal({modal, projects, list}: {modal: {active: boolean, index: number}, projects: Project[], list: MutableRefObject<any>}) {
+export default function ProjectModal({modal, projects}: {modal: {active: boolean, index: number}, projects: Project[]}) {
 	const { active, index } = modal
 
 	const modalContainer = useRef(null)

@@ -1,5 +1,5 @@
-import type { Metadata } from 'next'
-import { Rubik } from 'next/font/google'
+import type {Metadata} from 'next'
+import {Rubik} from 'next/font/google'
 import './globals.css'
 import SmoothScrollProvider from '@/components/providers/SmoothScrollProvider'
 import {clsx} from 'clsx'
@@ -17,13 +17,13 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" className="overflow-x-hidden">
-			<SmoothScrollProvider>
-				<body className={clsx(rubik.className, 'bg-white')}>
+			<body className={clsx(rubik.className, 'bg-white')}>
+				<SmoothScrollProvider>
 					<main className="overflow-x-hidden">
 						{children}
 					</main>
-				</body>
-			</SmoothScrollProvider>
+				</SmoothScrollProvider>
+			</body>
 		</html>
 	)
 }

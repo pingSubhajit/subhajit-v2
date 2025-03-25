@@ -1,8 +1,8 @@
 'use client'
 
-import { usePathname, useRouter } from 'next/navigation'
+import {usePathname, useRouter} from 'next/navigation'
 import React, {ReactNode, useEffect, useRef, useState} from 'react'
-import {AnimatePresence} from 'framer-motion'
+import {AnimatePresence} from 'motion/react'
 import Transitioner from '@/components/Transitioner'
 import {createPortal} from 'react-dom'
 
