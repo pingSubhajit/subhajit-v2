@@ -2,31 +2,17 @@
 
 import gsap from 'gsap'
 import {useEffect, useRef} from 'react'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import {ScrollTrigger} from 'gsap/ScrollTrigger'
 
 const MarqueeHeader = () => {
 	const firstText = useRef(null)
 	const secondText = useRef(null)
 	const thirdText = useRef(null)
 	const slider = useRef(null)
+	const animationFrameId = useRef<number | null>(null)
 
 	let xPercent = 0
 	let direction = -1
-
-	useEffect(() => {
-		gsap.registerPlugin(ScrollTrigger)
-		gsap.to(slider.current, {
-			scrollTrigger: {
-				trigger: document.documentElement,
-				scrub: 0.25,
-				start: 0,
-				end: window.innerHeight,
-				onUpdate: e => direction = e.direction * -1
-			},
-			x: '-500px',
-		})
-		requestAnimationFrame(animate)
-	}, [])
 
 	const animate = () => {
 		if(xPercent < -100){
@@ -39,9 +25,41 @@ const MarqueeHeader = () => {
 		gsap.set(firstText.current, {xPercent: xPercent})
 		gsap.set(secondText.current, {xPercent: xPercent})
 		gsap.set(thirdText.current, {xPercent: xPercent})
-		requestAnimationFrame(animate)
+		animationFrameId.current = requestAnimationFrame(animate)
 		xPercent += 0.1 * direction
 	}
+
+	useEffect(() => {
+		gsap.registerPlugin(ScrollTrigger)
+		
+		const scrollTriggerInstance = gsap.to(slider.current, {
+			scrollTrigger: {
+				trigger: document.documentElement,
+				scrub: 0.25,
+				start: 0,
+				end: window.innerHeight,
+				onUpdate: e => direction = e.direction * -1
+			},
+			x: '-500px',
+		})
+		
+		animationFrameId.current = requestAnimationFrame(animate)
+		
+		return () => {
+			// Clean up on component unmount
+			if (animationFrameId.current) {
+				cancelAnimationFrame(animationFrameId.current)
+			}
+			
+			// Kill GSAP animations and ScrollTrigger
+			if (scrollTriggerInstance && scrollTriggerInstance.scrollTrigger) {
+				scrollTriggerInstance.scrollTrigger.kill()
+			}
+			
+			// Clear any other GSAP animations that might be targeting these elements
+			gsap.killTweensOf([firstText.current, secondText.current, thirdText.current, slider.current])
+		}
+	}, [])
 	
 	return (
 		<div className="relative flex overflow-hidden h-screen">
