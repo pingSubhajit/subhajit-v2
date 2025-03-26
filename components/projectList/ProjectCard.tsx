@@ -12,6 +12,7 @@ const ProjectCard = ({
 	type,
 	src,
 	color,
+	subtitle,
 	setModal
 }: {
 	index: number,
@@ -20,6 +21,7 @@ const ProjectCard = ({
 	type: string,
 	src: StaticImageData,
 	color: string,
+	subtitle: string
 	setModal: (modal: {active: boolean, index: number}) => void
 }) => {
 	const {isTablet, isMobile} = useResponsive()
@@ -53,8 +55,12 @@ const ProjectCard = ({
 						</div>
 					</div>
 				</div>}
-				<h2 className="text-5xl md:text-8xl lg:text-7xl xl:text-8xl transition-all
-				duration-300 group-hover:translate-x-[-10px]">{title}</h2>
+				<div className="space-y-4">
+					<h2 className="text-5xl md:text-8xl lg:text-7xl xl:text-8xl transition-all duration-300 group-hover:translate-x-[-10px]">
+						{title}
+					</h2>
+					<p className="text-xl pl-1">{subtitle}</p>
+				</div>
 				<p className="text-xl transition-all duration-300 group-hover:translate-x-[10px]">{type}</p>
 			</div>
 		</TransitionLink>

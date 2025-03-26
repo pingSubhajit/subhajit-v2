@@ -22,6 +22,7 @@ const ProjectList = () => {
 						type={project.type}
 						src={project.src}
 						color={project.color}
+						subtitle={project.subtitle}
 						setModal={setModal}
 						key={index}
 					/>

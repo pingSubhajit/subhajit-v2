@@ -1,11 +1,12 @@
 import {StaticImageData} from 'next/image'
-import pokenameHero from '@/public/images/pokename.png'
+import halycronHero from '@/public/images/halycron.png'
 import tickerHero from '@/public/work/ticker/hero.png'
-import scrapyHero from '@/public/images/scrapy.png'
+import letrazHero from '@/public/images/letraz.png'
 import kayshenHero from '@/public/images/wbtsk.png'
 
 export type Project = {
 	title: string,
+	subtitle: string,
 	slug: string,
 	type: string,
 	src: StaticImageData,
@@ -14,28 +15,32 @@ export type Project = {
 
 const projects: Project[] = [
 	{
-		title: 'POKENAME',
-		slug: 'pokename',
+		title: 'Halycron',
+		subtitle: 'Truly secure, private photo vault',
+		slug: 'halycron',
 		type: 'Design & Development',
-		src: pokenameHero,
-		color: '#000000'
+		src: halycronHero,
+		color: '#121C1C'
 	},
 	{
-		title: 'TICKER',
+		title: 'Letraz',
+		subtitle: 'Automated tailored resumes for each job',
+		slug: 'letraz',
+		type: 'Design & Development',
+		src: letrazHero,
+		color: '#B7B2A3'
+	},
+	{
+		title: 'Ticker',
+		subtitle: 'Realtime long duration stopwatch',
 		slug: 'ticker',
 		type: 'Realtime long duration stopwatch',
 		src: tickerHero,
 		color: '#eed3be'
 	},
 	{
-		title: 'SCRAPY',
-		slug: 'scrapy',
-		type: 'Design & Development',
-		src: scrapyHero,
-		color: '#EFE8D3'
-	},
-	{
 		title: 'KAYSHEN',
+		subtitle: 'A platform for creators',
 		slug: 'kayshen',
 		type: 'Design & Development',
 		src: kayshenHero,
