@@ -39,9 +39,9 @@ const Parallax = (
 	}, [id, speed, windowWidth])
 
 	return (
-		<span ref={trigger} className={className}>
-			<span ref={target}>{children}</span>
-		</span>
+		<div ref={trigger} className={className}>
+			<div ref={target}>{children}</div>
+		</div>
 	)
 }
 

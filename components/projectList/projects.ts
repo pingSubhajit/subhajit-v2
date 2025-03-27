@@ -2,7 +2,7 @@ import {StaticImageData} from 'next/image'
 import halycronHero from '@/public/images/halycron.png'
 import tickerHero from '@/public/work/ticker/hero.png'
 import letrazHero from '@/public/images/letraz.png'
-import kayshenHero from '@/public/images/wbtsk.png'
+import stacksHero from '@/public/images/stacks.png'
 
 export type Project = {
 	title: string,
@@ -39,11 +39,11 @@ const projects: Project[] = [
 		color: '#eed3be'
 	},
 	{
-		title: 'KAYSHEN',
+		title: 'Stacks',
 		subtitle: 'A platform for creators',
 		slug: 'kayshen',
 		type: 'Design & Development',
-		src: kayshenHero,
+		src: stacksHero,
 		color: '#706D63'
 	}
 ]

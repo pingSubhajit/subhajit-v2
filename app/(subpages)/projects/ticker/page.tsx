@@ -75,7 +75,7 @@ const TickerProjectPage = () => {
 					autoPlay={true} loop={true} muted={true}
 					className="col-span-10 col-start-2 my-32"
 				>
-					<source src="/work/ticker/showcase1.webm" type="video/webm"/>
+					<source src="/work/ticker/showcase2.mp4" type="video/webm"/>
 					Your browser does not support the video tag.
 				</video>
 
